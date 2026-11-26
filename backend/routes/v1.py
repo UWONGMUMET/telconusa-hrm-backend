@@ -5,6 +5,7 @@ from modules.departments.router import job_router
 from modules.employees.router import work_area_router, employee_router
 from modules.recruitment.router import router as applicants_router
 from modules.employment.router import router as employment_router
+from modules.access.router import router as access_router
 
 router = APIRouter(prefix="/api/v1")
 router.include_router(departments_router)
@@ -13,3 +14,4 @@ router.include_router(work_area_router)
 router.include_router(employee_router)
 router.include_router(applicants_router)
 router.include_router(employment_router)
+router.include_router(access_router)
