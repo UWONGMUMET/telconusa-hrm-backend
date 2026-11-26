@@ -7,6 +7,7 @@ from db.session import engine
 import modules.departments.models
 import modules.employees.models
 import modules.recruitment.models
+import modules.employment.models
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
