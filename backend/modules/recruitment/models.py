@@ -1,3 +1,4 @@
+from datetime import date
 from sqlalchemy import ForeignKey, Text
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -11,3 +12,13 @@ class Applicant(Base):
     full_name: Mapped[str] = mapped_column(Text)
     contact: Mapped[str] = mapped_column(Text)
     application_status: Mapped[str] = mapped_column(Text)
+
+class ApplicantSelection(Base):
+    __tablename__ = "applicant_selections"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    applicant_id: Mapped[int] = mapped_column(ForeignKey("applicants.id"))
+    stage: Mapped[str] = mapped_column(Text)
+    selection_date: Mapped[date]
+    result: Mapped[str] = mapped_column(Text)
+    notes: Mapped[str | None] = mapped_column(Text)
